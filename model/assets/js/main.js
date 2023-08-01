@@ -4,13 +4,15 @@ const segundos = document.getElementById('segundos');
 var second = 0
 var micond = 0
 var horand = 0
-var fleg = false;
+var fleg = 0;
+var intervalId; // Variável para armazenar o ID do setInterval
+var timerEmExecucao = false; // Flag para controlar se o timer está em execução
 
 function tratarNumero (numero){
   return numero<10? '0' + numero : numero;
 }
 
-function mostrarHora(){
+setInterval(function mostrarHora(){
   data = new Date();
   h = tratarNumero(data.getHours());
   min = tratarNumero(data.getMinutes());
@@ -19,9 +21,10 @@ function mostrarHora(){
   horas.textContent = h;
   minutos.textContent = min;
   segundos.textContent = secon;
-}
+},1000)
 
 function iniciciarContagem(){
+  limparTimer();
   second ++;
   var valor = second <10? '0'+ second: second
   segunsd = second >= 60? micond ++: micond;
@@ -40,16 +43,19 @@ function limparTimer(){
   window.location.reload()
 }
 
+
 function ligarContagem() {
-  fleg += 1;
-  if (fleg === 1) { // Verifica se fleg é igual a 1 antes de criar um novo intervalo
-    intervalId = setInterval(iniciciarContagem, 1000); // Armazena o ID do setInterval em intervalId
+  if (!timerEmExecucao) { // Verifica se o timer não está em execução antes de criar um novo intervalo
+      intervalId = setInterval(iniciciarContagem, 1000); // Armazena o ID do setInterval em intervalId
+      timerEmExecucao = true; // Define a flag como true para indicar que o timer está em execução
   }
 }
 
 function pausarTimer() {
-  clearInterval(intervalId); // Limpa o intervalo usando o ID armazenado em intervalId
-  fleg = 0; // Reinicia a flag para que, se ligar novamente, um novo intervalo possa ser criado
+  if (timerEmExecucao) { // Verifica se o timer está em execução antes de limpar o intervalo
+      clearInterval(intervalId); // Limpa o intervalo usando o ID armazenado em intervalId
+      timerEmExecucao = false; // Define a flag como false para indicar que o timer está pausado
+  }
 }
 
 
