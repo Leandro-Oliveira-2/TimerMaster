@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(120deg, #26C6DA, #00E676);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.relogio {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 300px;
+  width: 700px;
+  background: transparent;
+  border-radius: 15px; /* Arredondar os cantos */
+  box-shadow: 0px 8px 10px rgba(0, 0, 0, .5);
+  margin-bottom: 15px;
+}
+
+.relogio div {
+  height: 180px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: rgba(0, 0, 0, .7);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, .7);
+  border-radius: 15px; /* Arredondar os cantos */
+  letter-spacing: 3px;
+}
+
+.relogio span {
+  font-weight: bolder;
+  font-size: 120px; /* Tornar o texto um pouco menor */
+}
+
+.relogio span.tempo {
+  font-size: 12px; /* Tornar o texto um pouco menor */
+  margin-block-end: 15px;
+}
+
+.timer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 150px;
+    width: 700px;
+    background: transparent;
+    border-radius: 15px; /* Arredondar os cantos */
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, .5);
+}
+
+/* style.css */
+
+/* ... restante do código CSS ... */
+
+.timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  width: 700px;
+  background: transparent;
+  border-radius: 15px;
+  box-shadow: 0px 8px 10px rgba(0, 0, 0, .5);
+}
+
+.timer div {
+  display: flex;
+  gap: 10px; /* Adicionando um espaçamento entre os botões */
+}
+
+.timer button {
+  padding: 10px 20px; /* Aumentando o espaçamento interno dos botões */
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: 25px;
+  transition: background-color 0.2s;
+}
+
+.timer button:first-child {
+  background: rgba(0, 0, 0, .7);
+  color: #fff;
+}
+
+.timer button:first-child:hover {
+  background: linear-gradient(120deg, #26daad, #00E676);
+}
+
+.timer button:first-child:active {
+  background: linear-gradient(120deg, #26C6DA, #00E676);
+  box-shadow: 0px 8px 10px rgba(0, 0, 0, .5);
+}
+
+.timer button:nth-child(2) {
+  background: rgba(0, 0, 0, .7);
+  color: #fff;
+}
+
+.timer button:nth-child(2):hover {
+  background: linear-gradient(120deg, #26daad, #00E676);
+}
+
+.timer button:nth-child(2):active {
+  background: linear-gradient(120deg, #26C6DA, #00E676);
+  box-shadow: 0px 8px 10px rgba(0, 0, 0, .5);
+}
+
+.timer button:last-child {
+  background: rgba(0, 0, 0, .7);
+  color: #fff;
+}
+
+.timer button:last-child:hover {
+  background: linear-gradient(120deg, #26daad, #00E676);
+}
+
+.timer button:last-child:active {
+  background: linear-gradient(120deg, #26C6DA, #00E676);
+  box-shadow: 0px 8px 10px rgba(0, 0, 0, .5);
+}
